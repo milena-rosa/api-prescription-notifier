@@ -11,6 +11,11 @@ interface IPayload {
   email: string
 }
 
+interface ITokenResponse {
+  token: string
+  refreshToken: string
+}
+
 @injectable()
 class RefreshTokenUseCase {
   constructor(
@@ -20,8 +25,14 @@ class RefreshTokenUseCase {
     private dateProvider: IDateProvider
   ) {}
 
-  async execute(token: string): Promise<string> {
-    const { secret_refresh_token, expires_in_refresh_token, expires_refresh_token_days } = auth
+  async execute(token: string): Promise<ITokenResponse> {
+    const {
+      secret_refresh_token,
+      expires_in_refresh_token,
+      expires_refresh_token_days,
+      secret_token,
+      expires_in_token
+    } = auth
 
     if (!token) {
       throw new AppError('Invalid token', 401, 'token.invalid')
@@ -48,7 +59,15 @@ class RefreshTokenUseCase {
       user_id
     })
 
-    return refreshToken
+    const newToken = sign({}, secret_token, {
+      subject: user_id,
+      expiresIn: expires_in_token
+    })
+
+    return {
+      token: newToken,
+      refreshToken
+    }
   }
 }
 
