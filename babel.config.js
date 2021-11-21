@@ -5,10 +5,10 @@ module.exports = {
       'module-resolver',
       {
         alias: {
-          '@modules': ['./src/modules'],
-          '@shared': ['./src/shared'],
-          '@errors': ['./src/shared/errors'],
-          '@config': ['./src/config']
+          '@modules': './src/modules',
+          '@shared': './src/shared',
+          '@errors': './src/shared/errors',
+          '@config': './src/config'
         }
       }
     ],
