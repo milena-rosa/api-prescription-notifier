@@ -5,6 +5,9 @@ module.exports = {
   url: process.env.DATABASE_URL,
   synchronize: false,
   logging: true,
+  extra: {
+    ssl: true
+  },
   migrations: ['dist/shared/infra/typeorm/migrations /*.ts'],
   entities: ['dist/modules/**/entities/*.ts'],
   cli: {
