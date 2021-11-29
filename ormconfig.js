@@ -6,6 +6,11 @@ module.exports = {
   synchronize: false,
   logging: true,
   ssl: true,
+  extra: {
+    ssl: {
+      rejectUnauthorized: false
+    }
+  },
   migrations: ['dist/shared/infra/typeorm/migrations /*.ts'],
   entities: ['dist/modules/**/entities/*.ts'],
   cli: {
