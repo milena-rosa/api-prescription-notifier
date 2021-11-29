@@ -35,4 +35,4 @@ app.use((error: Error, request: Request, response: Response): Response => {
   })
 })
 
-app.listen(3333, () => console.log('server running on port 3333'))
+app.listen(process.env.PORT || 3333, () => console.log('server running on port 3333'))
