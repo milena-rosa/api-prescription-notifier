@@ -1,4 +1,5 @@
 import 'reflect-metadata'
+import 'dotenv'
 
 import express, { Request, Response } from 'express'
 import 'express-async-errors'
