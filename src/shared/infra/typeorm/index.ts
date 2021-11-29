@@ -9,8 +9,6 @@ getConnectionOptions().then((options) => {
   newOptions.host = 'database'
 
   createConnection({
-    // ...options,
-    type: 'postgres',
-    url: process.env.DATABASE_URL
+    ...options
   })
 })

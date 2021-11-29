@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import 'dotenv'
+import dotenv from 'dotenv'
 
 import express, { Request, Response } from 'express'
 import 'express-async-errors'
@@ -11,6 +11,8 @@ import '@shared/container'
 
 import { router } from './routes'
 import { AppError } from '@errors/AppError'
+
+dotenv.config()
 
 const app = express()
 app.use(express.json())

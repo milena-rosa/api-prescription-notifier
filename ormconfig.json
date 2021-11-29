@@ -1,10 +1,9 @@
 {
+  "name": "default",
   "type": "postgres",
-  "host": "ec2-3-89-214-80.compute-1.amazonaws.com",
-  "port": 5432,
-  "username": "cwowfnewrbszue",
-  "password": "f053d593f706534fb9936354f0fc889e6353c2f0dc9663123b198f5245f9b564",
-  "database": "dttojdhi801vo",
+  "url": "postgres://flaqkxfhooanxa:76f58e01d4fd4360046898a4ce2f21e157cb7ea142528054bfb736b35b99548f@ec2-18-210-159-154.compute-1.amazonaws.com:5432/d7567ps5jrcf9k",
+  "synchronize": false,
+  "logging": true,
   "migrations": [
     "./src/shared/infra/typeorm/migrations/*.ts"
   ],
