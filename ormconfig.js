@@ -10,8 +10,8 @@ module.exports = {
       rejectUnauthorized: false
     }
   },
-  migrations: ['dist/shared/infra/typeorm/migrations/*.ts'],
-  entities: ['dist/modules/**/entities/*.ts'],
+  migrations: ['dist/shared/infra/typeorm/migrations/*.js'],
+  entities: ['dist/modules/**/entities/*.js'],
   cli: {
     migrationsDir: './src/shared/infra/typeorm/migrations'
   }
